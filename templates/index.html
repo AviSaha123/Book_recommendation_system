@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Recommendation System</title>
+
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+    
+<body style="background-color: black">
+    <nav class="navbar" style="background-color: #1b73bb" >
+        <a class="navbar-brand">Book Recommender</a>
+        <ul class="nav navbar-nav">
+            <li><a>Home</a></li>
+            <li><a>Recommend</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+                <h1 class="text-white" style="Font: size 50px"> Top 50 Books By Popularity</h1>
+            </div>
+
+            {% for i in range(book_name | length)%}
+            <div class="col-md-3" style="margin-top:30px">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{image_url[i]}}">
+                        <p>{{book_name[i]}}</p>
+                        <p>{{book_author[i]}}</p>
+                        <p>Votes - {{votes[i]}}</p>
+                        <p>Ratings - {{ratings[i]}}</p>
+                    </div>
+            
+                </div>
+            </div>
+            {%  endfor   %}
+            
+        </div>
+    </div>
+    </body>
+</html>
